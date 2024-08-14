@@ -1,0 +1,34 @@
+<div class="employee-container">
+  <div class="employee-header">
+    <div class="employee-image">
+      <img
+        class="image"
+        src="assets/images/{{ employee.avatar }}"
+        height="90px"
+      />
+    </div>
+    <div class="employee-title">
+      <span class="emp-name">
+        {{ employee.name }}
+      </span>
+
+      <br />
+
+      <span class="emp-designation">
+        {{ employee.designation }}
+      </span>
+    </div>
+  </div>
+
+  <div class="employee-details">
+    <div class="emp-details">
+      <img src="assets/images/phone.png" class="phone-icon" />
+      <span>{{ employee.contactNo }}</span>
+    </div>
+    <div class="emp-details">
+      <img src="assets/images/mail.png" class="phone-icon" height="15px" />
+      <span>{{ employee.emailId }}</span>
+    </div>
+    <div></div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="employee-form">
+  <form class="form-elements" (ngSubmit)="save()">
+    <div class="form-element">
+      <label
+        >Name:
+        <br />
+        <input [(ngModel)]="employee.name" name="name" required />
+      </label>
+    </div>
+    <div class="form-element">
+      <label
+        >ID:
+        <br />
+        <input [(ngModel)]="employee.id" name="ID" required />
+      </label>
+    </div>
+    <div class="form-element">
+      <label
+        >Company Name:
+        <br />
+        <input [(ngModel)]="employee.companyName" name="companyName" required />
+      </label>
+    </div>
+    <div class="form-element">
+      <label
+        >Email ID:
+        <br />
+        <input
+          [(ngModel)]="employee.emailId"
+          name="emailId"
+          type="email"
+          required
+        />
+      </label>
+    </div>
+
+    <div class="form-element">
+      <label
+        >Contact No.:
+        <br />
+        <input [(ngModel)]="employee.contactNo" name="contactNo" required />
+      </label>
+    </div>
+
+    <div class="form-element">
+      <label
+        >Designation:
+        <br />
+        <select [(ngModel)]="employee.designation" name="designation">
+          <option
+            *ngFor="
+              let des of [
+                'Software Developer',
+                'Senior Software Developer',
+                'Quality Assurance',
+                'Technical Lead',
+                'Manager'
+              ]
+            "
+            [value]="des"
+          >
+            {{ des }}
+          </option>
+        </select>
+      </label>
+    </div>
+
+    <div class="form-element">
+      <label
+        >Avatar:
+        <br />
+        <select [(ngModel)]="employee.avatar" name="avatar">
+          <option *ngFor="let avatar of avatars" [value]="avatar">
+            {{ avatar }}
+          </option>
+        </select>
+      </label>
+      <br />
+      <img
+        class="select-image"
+        src="assets/images/{{ employee.avatar }}"
+        alt=""
+        width="100px"
+      />
+    </div>
+
+    <br />
+    <button class="save-button" type="submit">Save</button>
+  </form>
+</div>

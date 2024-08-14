@@ -1,0 +1,22 @@
+.employee-form {
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  padding: 10px;
+}
+.form-elements {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.form-element {
+  width: 300px;
+  padding: 10px;
+}
+.save-button {
+  width: 50px;
+  margin: 10px;
+}
+
+.select-image {
+  margin-top: 10px;
+}

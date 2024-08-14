@@ -1,0 +1,44 @@
+<div>
+  <div>
+    <label style="margin-right: 5px" for="search">Search - </label>
+    <input
+      [(ngModel)]="searchQuery"
+      (input)="search()"
+      placeholder="Search by Designation or name or email"
+    />
+
+    <label style="margin-left: 30px" for="filter">Filter by Role - </label>
+
+    <select
+      [(ngModel)]="employeeRole"
+      (ngModelChange)="filter($event)"
+      name="filter"
+    >
+      <option *ngFor="let role of employeeRoles" [value]="role">
+        {{ role }}
+      </option>
+    </select>
+  </div>
+  <br />
+  <span *ngIf="searchQuery || employeeRole !== 'Select'"
+    >{{ filteredEmployees.length }} Results found</span
+  >
+  <br />
+  <div class="employee-list">
+    <li
+      *ngFor="let employee of filteredEmployees"
+      style="list-style: none; margin: 0px 10px 10px"
+    >
+      <app-employee-component [employee]="employee"></app-employee-component>
+      <div class="action-buttons">
+        <img
+          (click)="deleteEmployee(employee.id!)"
+          src="assets/images/delete.png"
+        />
+        <a [routerLink]="['/edit', employee.id]"
+          ><img src="assets/images/editing.png" alt=""
+        /></a>
+      </div>
+    </li>
+  </div>
+</div>
